@@ -108,33 +108,5 @@ void printList(LinkedList* list) {
     }
     
 }
-/*
-int main(){
-
-    LinkedList* list1 = createLinkedList();
-    LinkedList* list2 = createLinkedList();
-
-    add(1, list1);
-    add(2, list2);
-    add(3, list1);
-    add(4, list2);
-    add(5, list1);
-    add(6, list2);
-    add(7, list1);
-    add(8, list2);
-    add(9, list1);
-
-    printf("First List : ");
-    printList(list1);
-    printf("\n");
-
-    printf("Second List : ");
-    printList(list2);
-    printf("\n");
-    
-
-    return 0;
-}
-*/
 
 #endif
