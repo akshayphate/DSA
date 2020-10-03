@@ -22,20 +22,21 @@ void BFS(AdjListGraph* G, int src) {
     while (!isEmpty(Q)) {
         vertex = dequeue(Q);
         Vertex* v = G->vertices[vertex];
-        Node* current = G->vertices[vertex]->list->head;
+        Node* current = v->list->head;
         while (1) {
             if (current == NULL)
                 break;
             int neighbour = current->data;
-            if (G->vertices[neighbour]->colour == WHITE) {
-                G->vertices[neighbour]->colour = GREY;
-                G->vertices[neighbour]->distance = G->vertices[vertex]->distance + 1;
-                G->vertices[neighbour]->parent = vertex;
+            Vertex* neighbourVertex = G->vertices[neighbour];
+            if (neighbourVertex->colour == WHITE) {
+                neighbourVertex->colour = GREY;
+                neighbourVertex->distance = v->distance + 1;
+                neighbourVertex->parent = vertex;
                 enque(neighbour, Q);
             }
             current = current->next;
         }
-        G->vertices[vertex]->colour = BLACK;
+        v->colour = BLACK;
     }
 
     for (int i = 1; i <= G->V; i++) {
